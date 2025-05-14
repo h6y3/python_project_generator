@@ -75,3 +75,22 @@ When modifying the generator script, be mindful of:
 - Maintaining the project structure documentation in both the script output and README
 - Use `python3` to run Python versus `python` to avoid excessive token usage
 
+## GitHub Operations
+
+### Authentication
+
+When working with GitHub repositories:
+- Use SSH URLs (`git@github.com:username/repo.git`) instead of HTTPS URLs for authentication
+- Ensure SSH keys are properly set up with GitHub
+- When creating a new repository, you can use:
+  ```bash
+  gh repo create repo-name --public
+  git remote add origin git@github.com:username/repo-name.git
+  ```
+
+### Common Issues
+
+- Authentication failures with HTTPS URLs: Switch to SSH URLs as shown above
+- Permission issues: Ensure your SSH key is added to your GitHub account and the SSH agent
+- If using `gh` CLI, ensure you're properly authenticated with `gh auth status`
+
